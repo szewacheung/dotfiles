@@ -1,0 +1,2 @@
+alias jek="bundle exec jekyll serve"
+alias subl="subl ."
