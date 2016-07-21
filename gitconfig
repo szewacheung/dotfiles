@@ -12,7 +12,7 @@
   co = checkout
   st = status
 [core]
-  excludesfile = ~/.gitignore
+	excludesfile = /Users/szewa/.gitignore
   autocrlf = input
 [merge]
   ff = only
@@ -24,3 +24,18 @@
   autosquash = true
 [include]
   path = ~/.gitconfig.local
+[filter "lfs"]
+	clean = git-lfs clean %f
+	smudge = git-lfs smudge %f
+	required = true
+[user]
+	name = 
+	email = 
+[credential]
+	helper = osxkeychain
+[difftool "sourcetree"]
+	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+	path = 
+[mergetool "sourcetree"]
+	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	trustExitCode = true
